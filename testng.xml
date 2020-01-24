@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="twosixlabstest">
+	
+	<test name="ChromeTestScript">
+	<classes>
+	<class name="twosixlabstest.ChromeTestScript"/>
+	</classes>
+	</test>
+
+</suite>
