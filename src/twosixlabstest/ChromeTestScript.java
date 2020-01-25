@@ -42,7 +42,7 @@ public class ChromeTestScript {
 		  try {
 			  	FileUtils.copyFile(src, new File("wrong_author_name_top.png"));
 			  } catch(IOException ee) {
-				  System.out.println(e.getMessage());
+				  System.out.println(ee.getMessage());
 			  }
 	  }
 	  
@@ -64,7 +64,7 @@ public class ChromeTestScript {
 		  try {
 			  	FileUtils.copyFile(src, new File("wrong_author_name_bottom.png"));
 			  } catch(IOException ee) {
-				  System.out.println(e.getMessage());
+				  System.out.println(ee.getMessage());
 			  }
 	  
 	  	}	
