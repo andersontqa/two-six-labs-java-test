@@ -33,15 +33,15 @@ public class ChromeTestScript {
 		  Assert.assertEquals(author_name_top, "Mark Pomerleau");
 		  File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  try {
-		  	FileUtils.copyFile(src, new File("correct_author_name_top.png"));
+		      FileUtils.copyFile(src, new File("correct_author_name_top.png"));
 		  } catch(IOException e) {
 			  System.out.println(e.getMessage());
 		  }
 	  } catch(AssertionError e) {
 		  File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  try {
-			  	FileUtils.copyFile(src, new File("wrong_author_name_top.png"));
-			  } catch(IOException ee) {
+		      FileUtils.copyFile(src, new File("wrong_author_name_top.png"));
+		  } catch(IOException ee) {
 				  System.out.println(ee.getMessage());
 			  }
 	  }
@@ -55,15 +55,15 @@ public class ChromeTestScript {
 		  Assert.assertEquals(author_name_bottom, "Mark Pomerleau");
 		  File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  try {
-		  	FileUtils.copyFile(src, new File("correct_author_name_bottom.png"));
+		     FileUtils.copyFile(src, new File("correct_author_name_bottom.png"));
 		  } catch(IOException e) {
 			  System.out.println(e.getMessage());
 		  }
 	  } catch(AssertionError e) {
 		  File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  try {
-			  	FileUtils.copyFile(src, new File("wrong_author_name_bottom.png"));
-			  } catch(IOException ee) {
+		     FileUtils.copyFile(src, new File("wrong_author_name_bottom.png"));
+		  } catch(IOException ee) {
 				  System.out.println(ee.getMessage());
 			  }
 	  
