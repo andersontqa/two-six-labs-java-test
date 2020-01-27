@@ -1,10 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="twosixlabstest">
+<suite name="twosixlabstest" thread-count="2" parallel="tests">
 	
 	<test name="ChromeTestScript">
+	<parameter name="browser" value="Chrome"/>
 	<classes>
-	<class name="twosixlabstest.ChromeTestScript"/>
+	<class name="twosixlabstest.CrossBrowserTestScript"/>
+	</classes>
+	</test>
+	<test name="FirefoxTestScript">
+	<parameter name="browser" value="Firefox"/>
+	<classes>
+	<class name="twosixlabstest.CrossBrowserTestScript"/>
 	</classes>
 	</test>
 
