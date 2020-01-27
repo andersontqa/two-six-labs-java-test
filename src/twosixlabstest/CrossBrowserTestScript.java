@@ -43,7 +43,13 @@ public class CrossBrowserTestScript {
 	  search.submit();
 	  // Locate and click on the first search result
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
-	  WebElement first_item = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#rso > div:nth-child(1) > div > div > div > div > div > div:nth-child(3) > div > div > div > a")));
+	  WebElement first_item = null;
+	  // Noticed a Div element would disappear and then reappear at random times
+	  try {
+		  first_item = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#rso > div:nth-child(1) > div > div > div > div > div > div:nth-child(3) > div > div > div > a")));
+	  } catch(NoSuchElementException e) {
+		  first_item = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#rso > div:nth-child(1) > div > div > div > div > div > div:nth-child(2) > div > div > div > a")));
+	  }
 	  first_item.click();
 	  //Locate two locations where author name is displayed
 	  String author_name_top = driver.findElement(By.cssSelector("#f0mcELYnsjf5vr > div > div.m-byline__meta.a-body1 > div.m-byline__author > span > span > a")).getText();
@@ -59,6 +65,7 @@ public class CrossBrowserTestScript {
 		  throw e;
 	  	}
 	  
+	  // Move to element wasn't actually putting the element in the viewport. Best solution for now
 	  JavascriptExecutor js = (JavascriptExecutor) driver;
 	  js.executeScript("window.scrollTo(0, 5300)");
 	  
